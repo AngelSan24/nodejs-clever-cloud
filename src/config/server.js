@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require('body-parser')
+const cors = require('cors');
 
 const server = express();
 
@@ -12,5 +13,6 @@ server.set('views', path.join(__dirname, '../app/views')); // Lugar donde estara
 
 // Middleware
 server.use(bodyParser.urlencoded({ extended: false }))
+server.use(cors());
 
 module.exports = server;
